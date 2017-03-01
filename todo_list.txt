@@ -1,0 +1,6 @@
+1.vee validate
+2.引入bootstrap和jquery
+3.vueX的使用
+4.webpack的打包
+5.mongo的使用
+6.组件的嵌套
