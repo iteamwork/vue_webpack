@@ -3,6 +3,13 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: './src/main.js',
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "windows.jQuery": "jquery"
+    })
+  ],
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -22,7 +29,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: [/node_modules/,/js/]
       },
       {
         test: /\.css$/,
@@ -43,7 +50,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      jquery: "jquery/src/jquery"
     }
   },
   devServer: {
