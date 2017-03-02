@@ -51,7 +51,6 @@ export default {
                     {username: self.user.username, password: self.user.password},
                     {emulateJSON: true})
                     .then(function (response) {
-                        console.log('right:' + JSON.stringify(response.data));
                         // 响应成功回调
                     }, function (response) {
                         console.log('error:' + response);
