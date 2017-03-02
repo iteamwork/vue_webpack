@@ -7,22 +7,27 @@
           <div class="pure-u-1-2">手机号登录</div>
           <div class="pure-u-1-2">用户名登录</div>
       </div>
-      <div class="pure-g content">
-          <div class="pure-u-1-5">
-              <i class="fa fa-2x fa-mobile" aria-hidden="true"></i>
-              <!--<i class="fa fa-camera-retro fa-lg"></i>-->
+      <div class="content">
+          <div class="pure-g">
+              <div class="pure-u-1-5">
+                  <i class="fa fa-2x fa-mobile" aria-hidden="true"></i>
+                  <!--<i class="fa fa-camera-retro fa-lg"></i>-->
+              </div>
+              <div class="pure-u-4-5">
+                  <input type="text" placeholder="请输入用户名或手机号" v-model="user.username">
+              </div>
           </div>
-          <div class="pure-u-4-5">
-              <input type="text" placeholder="请输入用户名或手机号" v-model="user.username">
+          <div class="pure-g">
+              <div class="pure-u-1-5">
+                  <i class="fa fa-2x fa-lock" aria-hidden="true"></i>
+              </div>
+              <div class="pure-u-4-5">
+                  <input type="password" placeholder="请输入密码" v-model="user.password">
+              </div>
           </div>
       </div>
-      <div class="pure-g">
-          <div class="pure-u-1-5">
-              <i class="fa fa-2x fa-lock" aria-hidden="true"></i>
-          </div>
-          <div class="pure-u-4-5">
-              <input type="password" placeholder="请输入密码" v-model="user.password">
-          </div>
+      <div class="pure-g bottom">
+          <input @click="btn_login" value="登录" class="pure-u-1">
       </div>
   </div>
 </template>
