@@ -5,29 +5,26 @@ import VueRouter from "vue-router"; //路由
 import VueResource from 'vue-resource'; //请求,后端交互数据
 import VeeValidate from 'vee-validate'; //验证器
 
-
-
-
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
-//import './assets/jquery/dist/jquery.js'
-//import './assets/bootstrap/dist/js/bootstrap.min.js'
-
 Vue.config.debug = true;
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(VeeValidate);
 
+//引入css文件
+import './assets/css/common.css';
+import '../node_modules/purecss/build/pure-min.css';
+import './assets/css/footer.css';
 
-// 定义组件, 也可以从别的文件引入
 
+//引入定义组件, 也可以从别的文件引入
+import Index from './component/index.vue'
 import firstcomponent from './component/firstcomponent.vue'
 import secondcomponent from './component/secondcomponent.vue'
 import Login from './component/login.vue'
 import Register from './component/register.vue'
 import NewLogin from './component/newLogin.vue'
 
-//errors
 import NotFound from './component/errors/404'
 
 
@@ -43,7 +40,7 @@ const router = new VueRouter({
   routes:[
     {
       path : '/',
-      component : firstcomponent
+      component : Index
     },
     {
       path:'/first',

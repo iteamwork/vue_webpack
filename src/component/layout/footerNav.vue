@@ -1,19 +1,23 @@
 <template>
-    <div id='footerNav' class="col-xs-12">
-        <div class="col-xs-4">我的</div>
-        <div class="col-xs-4">你的</div>
-        <div class="col-xs-4">他的</div>
-        <div class="col-md-12">
-            <input type='button' value="按钮" class="btn btn-block btn_primary">
-        </div>
+    <div class="footer pure-g m_center">
+        <div @click='getUrl' class="pure-u-1-3 active"><router-link to="/">电影</router-link></div>
+        <div @click='getUrl' class="pure-u-1-3"><router-link to="/register">影院</router-link></div>
+        <div @click='getUrl' class="pure-u-1-3"><router-link to="/login">我的</router-link></div>
     </div>
-
 </template>
 <script>
 export default{
-        data(){
-            return {
-            }
+    data(){
+        return {
         }
+    },
+   methods: {
+        getUrl:function() {
+            console.log(this.$route.path)
+        }
+   },
 }
 </script>
+<style>
+
+</style>

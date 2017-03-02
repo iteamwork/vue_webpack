@@ -1,3 +1,4 @@
+
 <template>
   <div id="login">
     <div class="col-md-12 column">
@@ -85,5 +86,7 @@ export default {
         text-align: left;
         color: #d9534f;
     }
+
 </style>
+
 
