@@ -4,7 +4,7 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
-var routes = require('./routes/User');
+var user = require('./routes/User');
 var app = express();
 
 app.all('*', function(req, res, next) {
@@ -18,7 +18,7 @@ app.all('*', function(req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post('/Login',routes.login);
+app.post('/Login',user.login);
 
 
 var server = app.listen(9999, function (err) {
