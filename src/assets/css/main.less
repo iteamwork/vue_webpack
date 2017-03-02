@@ -1,4 +1,6 @@
-@base-color: #c1c1c1;
+@base-white-color: #fff;
+@base-dark-color: #c1c1c1;
+@base-red-color:#e32829;
 
 /**
 * footer css
@@ -9,7 +11,7 @@
   bottom: 0;
   height: 3rem;
   line-height: 3rem;
-  background: @base-color;
+  background: @base-dark-color;
 
 
   a{
@@ -26,9 +28,33 @@
 * login css
 */
 #login{
-  padding: 1rem;
 
-  >div{
-    padding: 1rem;
+  .header{
+    background: @base-red-color;
+    height: 2.6rem;
+    line-height: 2.6rem;
+
+    .header_reg{
+      text-align: right;
+      padding-right: 1rem;
+    }
   }
+
+  .choose{
+    background: @base-white-color;
+    height: 2.6rem;
+    line-height: 2.6rem;
+    text-align: center;
+    .active{
+      color: @base-red-color;
+    }
+
+  }
+
+  .content{
+    padding-top: 1rem;
+
+  }
+
+
 }

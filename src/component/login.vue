@@ -1,6 +1,13 @@
 <template>
   <div id="login" class="pure-u-1">
-      <div class="pure-g">
+      <div class="header pure-g">
+          <div class="pure-u-1 header_reg"><router-link  to="/register">注册</router-link></li></div>
+      </div>
+      <div class="choose pure-g">
+          <div class="pure-u-1-2">手机号登录</div>
+          <div class="pure-u-1-2">用户名登录</div>
+      </div>
+      <div class="pure-g content">
           <div class="pure-u-1-5">
               <i class="fa fa-2x fa-mobile" aria-hidden="true"></i>
               <!--<i class="fa fa-camera-retro fa-lg"></i>-->
