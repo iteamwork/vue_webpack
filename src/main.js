@@ -14,7 +14,7 @@ Vue.use(VeeValidate);
 //引入css文件
 import './assets/css/common.css';
 import '../node_modules/purecss/build/pure-min.css';
-import './assets/css/footer.css';
+import './assets/css/main.css';
 
 
 //引入定义组件, 也可以从别的文件引入
