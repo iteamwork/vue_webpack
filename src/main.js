@@ -17,6 +17,7 @@ Vue.use(VeeValidate);
 
 
 // 定义组件, 也可以从别的文件引入
+
 import firstcomponent from './component/firstcomponent.vue'
 import secondcomponent from './component/secondcomponent.vue'
 import Login from './component/login.vue'
