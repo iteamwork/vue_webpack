@@ -12,8 +12,9 @@ Vue.use(VueResource);
 Vue.use(VeeValidate);
 
 //引入css文件
-import './assets/css/common.css';
 import '../node_modules/purecss/build/pure-min.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css'
+import './assets/css/common.css';
 import './assets/css/main.css';
 
 
