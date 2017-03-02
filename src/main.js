@@ -5,6 +5,9 @@ import VueRouter from "vue-router"; //路由
 import VueResource from 'vue-resource'; //请求,后端交互数据
 import VeeValidate from 'vee-validate'; //验证器
 
+
+
+
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 //import './assets/jquery/dist/jquery.js'
 //import './assets/bootstrap/dist/js/bootstrap.min.js'
@@ -24,6 +27,13 @@ import Login from './component/login.vue'
 import Register from './component/register.vue'
 import NewLogin from './component/newLogin.vue'
 
+//errors
+import NotFound from './component/errors/404'
+
+
+const TabFirst ={template:'<div>Posts</div>'}
+const TabSec ={template:'<div>Profile</div>'}
+
 
 // 创建一个路由器实例
 // 并且配置路由规则
@@ -32,8 +42,16 @@ const router = new VueRouter({
   base:__dirname,
   routes:[
     {
+      path : '/',
+      component : firstcomponent
+    },
+    {
       path:'/first',
-      component:firstcomponent
+      component:firstcomponent,
+      children: [
+        { path: 'tab1', component: TabFirst },
+        { path: 'tab2', component: TabSec }
+      ]
     },
     {
       path: '/second',
@@ -50,6 +68,10 @@ const router = new VueRouter({
     {
       path: '/newLogin',
       component: NewLogin
+    },
+    {
+      path : '*',
+      component : NotFound
     }
   ]
 })

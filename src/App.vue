@@ -62,21 +62,25 @@
       <li><router-link to="/register">注册</router-link></li>
       <!--<li><router-link to="/newLogin">新登录</router-link></li>-->
     </ul>
-
     <router-view class="view"></router-view>
 
+    <footerNav></footerNav>
 
   </div>
 </template>
 <script>
-  export default {
-    name: 'app',
-    data () {
+import footerNav from './component/layout/footerNav'
+export default {
+  name: 'app',
+  data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
   },
+  components:{
+    footerNav
   }
+}
 </script>
 
 <style>

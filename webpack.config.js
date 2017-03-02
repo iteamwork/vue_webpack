@@ -29,7 +29,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: [/node_modules/,/js/]
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -49,9 +49,12 @@ module.exports = {
     ]
   },
   resolve: {
+    extensions: ['.js', '.vue'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      jquery: "jquery/src/jquery"
+      'src': path.resolve(__dirname, './src'),
+      'assets': path.resolve(__dirname, './src/assets'),
+      'component': path.resolve(__dirname, './src/component')
     }
   },
   devServer: {
