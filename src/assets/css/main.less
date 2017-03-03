@@ -40,10 +40,11 @@
 
   .choose{
     background: @base-white-color;
-    height: 2.6rem;
-    line-height: 2.6rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
     text-align: center;
     .active{
+      border-bottom: 2px solid @base-red-color;
       color: @base-red-color;
     }
 
@@ -52,15 +53,41 @@
   .content{
     margin-top: 1rem;
     background: @base-white-color;
+    .pure-g{
+      .pure-u-1-5{
+
+      }
+      line-height: 2rem;
+      height: 2rem;
+      padding: 0.5rem 1rem;
+
+      input{
+        border: none;
+        text-shadow: none;
+        height: 100%;
+        width: 80%;
+      }
+    }
   }
 
   .bottom {
-    input {
+    margin-top: 1rem;
+    padding: 0 1rem;
+    .button-login {
       background: @base-red-color;
       color: @base-white-color;
-      text-align: center;
-      height: 2.6rem;
-      line-height: 2.6rem;
+      padding: 0.8rem 1rem;
+      border-radius: 0.3rem;
+    }
+  }
+
+  .forgotPwd{
+    padding-top: 2rem;
+    text-align: right;
+    padding-right: 1rem;
+    a{
+      color:@base-red-color;
+      font-size: 0.85rem;
     }
   }
 }

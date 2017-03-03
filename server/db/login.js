@@ -19,15 +19,19 @@ function getSha(val){
  * @param callback -->数据查询完成后的回调函数
  */
 function login(obj,callback){
-    var sql = 'select * from users where username=? and password = ? or mobile=? and password = ?';
-    dbConn.conn().query(sql,[obj.username,getSha(obj.password),obj.username,getSha(obj.password)], function (err, result) {
+    var sql ='';
+    //0:表示手机号登录，1:用户名登录
+    if(obj.type == 0)
+      sql = 'select * from users where mobile="'+obj.mobile+'" and password = "'+getSha(obj.password)+'"';
+    else
+      sql = 'select * from users where username="'+obj.username+'" and password = "'+getSha(obj.password)+'"';
+    dbConn.conn().query(sql, function (err, result) {
         if(err){
             console.log("login error at "+ err);
         }
         callback(result);
     })
 };
-
 
 function register(obj,callback){
     console.log(JSON.stringify(obj));
