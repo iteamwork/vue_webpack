@@ -9,7 +9,7 @@
       </div>
       <div class="content">
           <div v-if="loginTab.isMobileActive" class="pure-g m_line">
-              <div class="pure-u-1-8">
+              <div class="pure-u-1-8 m_center">
                   <i class="fa fa-2x fa-mobile" aria-hidden="true"></i>
                   <!--<i class="fa fa-camera-retro fa-lg"></i>-->
               </div>
@@ -19,7 +19,7 @@
           </div>
 
           <div v-if="loginTab.isUserActive" class="pure-g m_line">
-              <div class="pure-u-1-8">
+              <div class="pure-u-1-8 m_center">
                   <i class="fa fa-lg fa-user-o" aria-hidden="true"></i>
               </div>
               <div class="pure-u-7-8">
@@ -27,7 +27,7 @@
               </div>
           </div>
           <div class="pure-g">
-              <div class="pure-u-1-8">
+              <div class="pure-u-1-8 m_center">
                   <i class="fa fa-2x fa-lock" aria-hidden="true"></i>
               </div>
               <div class="pure-u-7-8">
