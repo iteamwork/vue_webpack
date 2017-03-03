@@ -3,13 +3,11 @@ import App from './App.vue'
 
 import VueRouter from "vue-router"; //路由
 import VueResource from 'vue-resource'; //请求,后端交互数据
-import VeeValidate from 'vee-validate'; //验证器
 
 Vue.config.debug = true;
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
-Vue.use(VeeValidate);
 
 //引入css文件
 import '../node_modules/purecss/build/pure-min.css';
