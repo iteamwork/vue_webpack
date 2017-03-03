@@ -20,6 +20,11 @@ import './assets/css/main.css';
 import Index from './component/index.vue'
 import firstcomponent from './component/firstcomponent.vue'
 import secondcomponent from './component/secondcomponent.vue'
+
+
+//user
+import Info from './component/user/info.vue'
+
 import Login from './component/login.vue'
 import Register from './component/register.vue'
 import NewLogin from './component/newLogin.vue'
@@ -64,6 +69,10 @@ const router = new VueRouter({
     {
       path: '/newLogin',
       component: NewLogin
+    },
+    {
+      path:'/user',
+      component : Info
     },
     {
       path : '*',

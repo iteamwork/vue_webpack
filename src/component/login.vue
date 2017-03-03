@@ -89,7 +89,11 @@ export default {
                   {emulateJSON: true})
                   .then(function (response) {
                       // 响应成功回调
-                      console.log('right:' + JSON.stringify(response.data));
+                      console.log('right:' + JSON.stringify(response.body));
+                      if(response.body.code == 200)
+                        window.location.href='/user/info';
+                      else
+                        alert('用户名或密码错误...');
                   }, function (response) {
                       console.log('error:' + response);
                       // 响应错误回调
