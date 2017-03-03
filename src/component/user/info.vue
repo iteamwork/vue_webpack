@@ -1,6 +1,8 @@
 <template>
     <div id="user">
-        <h1>You are best........</h1>
+        <div class="pure-g">
+
+        </div>
     </div>
 </template>
 <script>

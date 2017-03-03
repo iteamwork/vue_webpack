@@ -25,8 +25,8 @@ import secondcomponent from './component/secondcomponent.vue'
 //user
 import Info from './component/user/info.vue'
 
-import Login from './component/login.vue'
-import Register from './component/register.vue'
+import Login from './component/account/login.vue'
+import Register from './component/account/register.vue'
 import NewLogin from './component/newLogin.vue'
 
 import NotFound from './component/errors/404'
