@@ -7,7 +7,7 @@
                 </div>
                 <div class="m_padtop">
                     <div v-if="userName">
-                        <div style="color: #fff;font-size: 1rem;" :bind="userName">{{userName}}</div>
+                        <div style="color: #fff;font-size: 1rem;" >{{userName}}</div>
                     </div>
                     <div v-else>
                         <router-link  to="/login">请点击登录</router-link>
@@ -17,7 +17,7 @@
                     <ul v-if="userName" class="share">
                         <li>修改资料</li>
                         <li>修改密码</li>
-                        <li>退出登录</li>
+                        <li @click="logOut">退出登录</li>
                     </ul>
                 </div>
             </div>
@@ -36,8 +36,13 @@
 export default {
     data () {
         return {
-            isLogin:false,
             userName:sessionStorage.getItem('userName')
+        }
+    },
+    methods:{
+        logOut:function(){
+            sessionStorage.setItem('userName','');
+            this.userName = sessionStorage.getItem('userName');
         }
     }
 }
