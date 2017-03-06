@@ -6,11 +6,15 @@
                     <img class="face_img" src="../../assets/default_img.png" alt="pic">
                 </div>
                 <div class="m_padtop">
-                    <div  v-model="username"></div>
-                    <router-link  to="/login">请点击登录</router-link>
+                    <div v-if="userName">
+                        <div style="color: #fff;font-size: 1rem;" :bind="userName">{{userName}}</div>
+                    </div>
+                    <div v-else>
+                        <router-link  to="/login">请点击登录</router-link>
+                    </div>
                 </div>
                 <div >
-                    <ul class="share">
+                    <ul v-if="userName" class="share">
                         <li>修改资料</li>
                         <li>修改密码</li>
                         <li>退出登录</li>
@@ -33,7 +37,7 @@ export default {
     data () {
         return {
             isLogin:false,
-            username:'zhangqin'
+            userName:sessionStorage.getItem('userName')
         }
     }
 }

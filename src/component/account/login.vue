@@ -54,6 +54,7 @@ export default {
         password:'',
         mobile:''
       },
+      userName: '',
       userNameError:false,
       passwordError:false,
       loginTab:{
@@ -89,9 +90,11 @@ export default {
                   {emulateJSON: true})
                   .then(function (response) {
                       // 响应成功回调
-                      console.log('right:' + JSON.stringify(response.body));
-                      if(response.body.code == 200)
-                        window.location.href='/user';
+                      if(response.body.code == 200){
+                          sessionStorage.setItem('userName',response.body.user.username);
+                          console.log(sessionStorage.getItem('userName'));
+                          window.location.href='/user';
+                      }
                       else
                         alert('用户名或密码错误...');
                   }, function (response) {
