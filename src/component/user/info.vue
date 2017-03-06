@@ -24,12 +24,56 @@
         </div>
 
         <div class="pure-g">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul class="list">
+                <li @click="getGrunt('/register')">
+                    <div class="pure-u-1-8"></div>
+                    <div class="pure-u-3-4">咨询服务</div>
+                    <div class="pure-u-1-8"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-8"></div>
+                    <div class="pure-u-3-4">砍价意向</div>
+                    <div class="pure-u-1-8 m_center"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-8"></div>
+                    <div class="pure-u-3-4">我的专享</div>
+                    <div class="pure-u-1-8 "> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
+                </li>
             </ul>
         </div>
+
+        <div class="pure-g">
+            <ul class="list">
+                <li @click="getGrunt()">
+                    <div class="pure-u-1-8"></div>
+                    <div class="pure-u-3-4">我的收藏</div>
+                    <div class="pure-u-1-8"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-8"></div>
+                    <div class="pure-u-3-4">系统消息</div>
+                    <div class="pure-u-1-8 m_center"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="pure-g">
+            <ul class="list">
+                <li @click="getGrunt()">
+                    <div class="pure-u-1-8"></div>
+                    <div class="pure-u-3-4">使用帮助</div>
+                    <div class="pure-u-1-8"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-8"></div>
+                    <div class="pure-u-3-4">客服电话</div>
+                    <div class="pure-u-1-8 m_center"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
+                </li>
+            </ul>
+        </div>
+
+
     </div>
 </template>
 <script>
@@ -43,6 +87,12 @@ export default {
         logOut:function(){
             sessionStorage.setItem('userName','');
             this.userName = sessionStorage.getItem('userName');
+        },
+        getGrunt:function(val){
+            if(this.userName=='')
+                window.location.href='/login';
+            else
+                window.location.href=val;
         }
     }
 }
