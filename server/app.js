@@ -21,6 +21,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.post('/Login',user.login);//登录
 app.post('/Register',user.register);//注册
 
+app.get('/getUsers',user.getUsers);
+
 
 
 var server = app.listen(9999, function (err) {

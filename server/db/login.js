@@ -66,10 +66,22 @@ function updatePwd(obj,callback){
 };
 
 
+function getAllUsers(cb){
+    var sql = 'select * from users';
+    dbConn.conn().query(sql, function (err, results) {
+        if(err){
+            console.log('getAllUsers is err at ' + err);
+        }
+        cb(results);
+    })
+}
+
+
 //导出这些方法
 module.exports={
     login:login,
     isExistUser:isExistUser,
     register:register,
-    updatePwd:updatePwd
+    updatePwd:updatePwd,
+    getAllUsers:getAllUsers
 };

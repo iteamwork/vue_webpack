@@ -29,4 +29,12 @@ exports.register = function (req, res) {
             res.json({code:300,msg:'改手机号已存在...'});
         }
     })
-}
+};
+
+
+exports.getUsers = function (req, res) {
+    console.log("str: " +req.query.name);
+    dal.getAllUsers(function (results) {
+        res.json({code:200,msg:'获取列表成功',data:results});
+    })
+};
