@@ -30,12 +30,12 @@
                     <div class="pure-u-3-4">咨询服务</div>
                     <div class="pure-u-1-8"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
                 </li>
-                <li>
+                <li @click="getGrunt('/user/yxkj')">
                     <div class="pure-u-1-8"></div>
                     <div class="pure-u-3-4">砍价意向</div>
                     <div class="pure-u-1-8 m_center"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
                 </li>
-                <li>
+                <li @click="getGrunt('/user/wdzx')">
                     <div class="pure-u-1-8"></div>
                     <div class="pure-u-3-4">我的专享</div>
                     <div class="pure-u-1-8 "> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
@@ -45,12 +45,12 @@
 
         <div class="pure-g">
             <ul class="list">
-                <li @click="getGrunt()">
+                <li @click="getGrunt('/user/wdsc')">
                     <div class="pure-u-1-8"></div>
                     <div class="pure-u-3-4">我的收藏</div>
                     <div class="pure-u-1-8"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
                 </li>
-                <li>
+                <li @click="getGrunt('/user/xtxx')">
                     <div class="pure-u-1-8"></div>
                     <div class="pure-u-3-4">系统消息</div>
                     <div class="pure-u-1-8 m_center"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
@@ -60,12 +60,12 @@
 
         <div class="pure-g">
             <ul class="list">
-                <li @click="getGrunt()">
+                <li @click="getGrunt('/user/sybz')">
                     <div class="pure-u-1-8"></div>
                     <div class="pure-u-3-4">使用帮助</div>
                     <div class="pure-u-1-8"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
                 </li>
-                <li>
+                <li @click="getGrunt('/user/kfdh')">
                     <div class="pure-u-1-8"></div>
                     <div class="pure-u-3-4">客服电话</div>
                     <div class="pure-u-1-8 m_center"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>

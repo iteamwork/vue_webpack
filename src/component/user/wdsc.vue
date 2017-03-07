@@ -6,9 +6,9 @@
 <script>
     export default {
         data() {
-            return {
-                msg: "咨询服务",
-            }
+        return {
+            msg: "我的收藏",
         }
+    }
     }
 </script>

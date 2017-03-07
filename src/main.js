@@ -26,7 +26,12 @@ import secondcomponent from './component/secondcomponent.vue'
 import Info from './component/user/info.vue'
 //user subs
 import Zxfw from './component/user/zxfw.vue'
-
+import Yxkj from './component/user/yxkj.vue'
+import Wdzx from './component/user/wdzx.vue'
+import Wdsc from './component/user/wdsc.vue'
+import Xtxx from './component/user/xtxx.vue'
+import Sybz from './component/user/sybz.vue'
+import Kfdh from './component/user/kfdh.vue'
 
 import Login from './component/account/login.vue'
 import Register from './component/account/register.vue'
@@ -82,14 +87,38 @@ const router = new VueRouter({
       component : Zxfw
     },
     {
+      path:'/user/yxkj',
+      component : Yxkj
+    },
+    {
+      path:'/user/wdsc',
+      component : Wdsc
+    },
+    {
+      path:'/user/wdzx',
+      component : Wdzx
+    },
+    {
+      path:'/user/xtxx',
+      component : Xtxx
+    },
+    {
+      path:'/user/sybz',
+      component : Sybz
+    },
+    {
+      path:'/user/kfdh',
+      component : Kfdh
+    },
+    {
       path : '*',
       component : NotFound
     }
   ]
 })
 
-router.beforeEach(({meta, path}, from, next) => {
 
+router.beforeEach(({meta, path}, from, next) => {
   if(!sessionStorage.userName && path.indexOf('/user')>=0 && path !=='/user'){
     return next({path:'/login'})
   }
