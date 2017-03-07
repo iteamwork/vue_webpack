@@ -1,0 +1,104 @@
+/*格式化样式*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+}
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  width: 100%;
+  background: #f2f2f2;
+  font-size: 0.9rem;
+}
+header,
+footer,
+nav,
+section,
+figure,
+figcaption,
+aside,
+article {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+ol,
+ul {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+}
+q:before,
+q:after {
+  content: '';
+}
+abbr,
+acronym {
+  border: 0;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.m_center {
+  text-align: center;
+}
+.m_right {
+  text-align: right;
+}
+.m_padtop {
+  padding-top: 1rem;
+}
+.m_line {
+  border-bottom: 1px solid #f2f2f2;
+}

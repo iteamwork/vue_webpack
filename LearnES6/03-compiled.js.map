@@ -1,0 +1,1 @@
+{"version":3,"sources":["03.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;;AAEA","file":"03-compiled.js","sourcesContent":["//es5\r\n//function(i){\r\n//    return i++;\r\n//}\r\n\r\n//(i)=>i+1; //es6\r\n"]}

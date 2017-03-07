@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <h3>class, extends, super</h3>
+    <p>这三个特性涉及了ES5中最令人头疼的的几个部分：原型、构造函数，继承...你还在为它们复杂难懂的语法而烦恼吗?你还在为指针到底指向哪里而纠结万分吗?
+    　　有了ES6我们不再烦恼!
+    　　ES6提供了更接近传统语言的写法，引入了Class(类)这个概念。新的class写法让对象原型的写法更加清晰、更像面向对象编程的语法，也更加通俗易懂。</p>
+
+</body>
+
+<script type="text/javascript">
+    /**
+     * 传统的继承
+     */
+    function Animal(){
+        this.name='animal';
+        this.say = function () {
+            console.log(this.name + ' say');
+        }
+    }
+
+    function Cat(){
+        Animal.call(this);
+        this.name='cat';
+    }
+
+    var animal = new Animal();
+    animal.say();
+    var cat = new Cat();
+    cat.say();
+
+</script>
+
+
+
+<!--<script src="02.js"></script>-->
+
+</html>

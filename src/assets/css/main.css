@@ -1,0 +1,135 @@
+/**
+* index
+*/
+#index .header {
+  background: #fff;
+  padding: 0.75rem 0;
+}
+/**
+* footer css
+*/
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 3.2rem;
+  background: #c1c1c1;
+}
+.footer a {
+  display: inline-block;
+  padding: 0.5rem 0;
+  color: #f5f5f5;
+}
+.footer a img {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+.footer a .m_size {
+  font-size: 0.8rem;
+}
+.footer .active {
+  color: red;
+}
+/**
+* login css
+*/
+#login .header {
+  background: #e32829;
+  height: 2.6rem;
+  line-height: 2.6rem;
+}
+#login .header .header_reg {
+  text-align: right;
+  padding-right: 1rem;
+}
+#login .choose {
+  background: #fff;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  text-align: center;
+}
+#login .choose .active {
+  border-bottom: 2px solid #e32829;
+  color: #e32829;
+}
+#login .content {
+  margin-top: 1rem;
+  background: #fff;
+}
+#login .content .pure-g {
+  line-height: 2rem;
+  height: 2rem;
+  padding: 0.5rem 1rem;
+}
+#login .content .pure-g input {
+  border: none;
+  text-shadow: none;
+  height: 100%;
+  width: 80%;
+}
+#login .bottom {
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+#login .bottom .button-login {
+  background: #e32829;
+  color: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 0.3rem;
+}
+#login .forgotPwd {
+  padding-top: 2rem;
+  text-align: right;
+  padding-right: 1rem;
+}
+#login .forgotPwd a {
+  color: #e32829;
+  font-size: 0.85rem;
+}
+/**
+* user
+*/
+#user .img {
+  background: url("../wd_feng.png") no-repeat center;
+  position: relative;
+  height: 13rem;
+  width: 100%;
+  text-align: center;
+}
+#user .img .m_p2 {
+  padding-top: 1.8rem;
+}
+#user .img .face_img {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 2.5rem;
+}
+#user .img .share {
+  background-color: #000000;
+  overflow: auto;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.7rem 0rem;
+}
+#user .img .share li + li {
+  border-left: 1px solid #cccccc;
+}
+#user .img .share li {
+  float: left;
+  width: 33%;
+  color: #fff;
+  text-align: center;
+}
+#user .list {
+  width: 100%;
+  margin-top: 1rem;
+  background: #fff;
+}
+#user .list .pure-u-1-8 {
+  text-align: center;
+}
+#user .list li {
+  padding: 1rem;
+  border-bottom: 1px solid #f2f2f2;
+}
