@@ -7,10 +7,10 @@
                 <div class="m_size">电影</div>
             </div>
         </router-link>
-        <router-link class=' pure-u-1-3' :class="{'active': route === '/register'}" to="/register">
+        <router-link class=' pure-u-1-3' :class="{'active': route === '/cinema'}" to="/cinema">
             <div>
-                <img v-show="route !== '/register'" src="../../assets/imgs/mno.svg" alt="">
-                <img v-show="route === '/register'" src="../../assets/imgs/mok.svg" alt="">
+                <img v-show="route !== '/cinema'" src="../../assets/imgs/mno.svg" alt="">
+                <img v-show="route === '/cinema'" src="../../assets/imgs/mok.svg" alt="">
                 <div class="m_size">影院</div>
             </div>
         </router-link>

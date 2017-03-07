@@ -18,7 +18,9 @@ app.all('*', function(req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post('/Login',user.login);
+app.post('/Login',user.login);//登录
+app.post('/Register',user.register);//注册
+
 
 
 var server = app.listen(9999, function (err) {

@@ -33,6 +33,10 @@ import Xtxx from './component/user/xtxx.vue'
 import Sybz from './component/user/sybz.vue'
 import Kfdh from './component/user/kfdh.vue'
 
+
+import Cinema from './component/cinema.vue'
+
+
 import Login from './component/account/login.vue'
 import Register from './component/account/register.vue'
 import NewLogin from './component/newLogin.vue'
@@ -77,6 +81,10 @@ const router = new VueRouter({
     {
       path: '/newLogin',
       component: NewLogin
+    },
+    {
+      path: '/cinema',
+      component: Cinema
     },
     {
       path:'/user',

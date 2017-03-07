@@ -33,7 +33,7 @@ export default {
 //          window.location.href='/login';
 //        }
 //      }
-      if (path === '/' || path === '/register' || path === '/user') {
+      if (path === '/' || path === '/cinema' || path === '/user') {
         this.showNav = true
       } else {
         this.showNav = false
