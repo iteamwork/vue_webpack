@@ -26,6 +26,13 @@ export default {
   methods: {
     routeChange () {
       let path = this.$route.path
+//      console.log("path: " + path.indexOf('/user/'));
+//      if(path.indexOf('/user/')>=0){
+//        if(!sessionStorage.userName){
+//          redirect
+//          window.location.href='/login';
+//        }
+//      }
       if (path === '/' || path === '/register' || path === '/user') {
         this.showNav = true
       } else {

@@ -25,7 +25,7 @@
 
         <div class="pure-g">
             <ul class="list">
-                <li @click="getGrunt('/register')">
+                <li @click="getGrunt('/user/zxfw')">
                     <div class="pure-u-1-8"></div>
                     <div class="pure-u-3-4">咨询服务</div>
                     <div class="pure-u-1-8"> <i class="fa fa-lg fa-angle-right" aria-hidden="true"></i> </div>
@@ -89,9 +89,9 @@ export default {
             this.userName = sessionStorage.getItem('userName');
         },
         getGrunt:function(val){
-            if(this.userName=='')
-                window.location.href='/login';
-            else
+//            if(this.userName == null || this.userName =="")
+//                window.location.href='/login';
+//            else
                 window.location.href=val;
         }
     }

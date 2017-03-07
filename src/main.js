@@ -24,6 +24,9 @@ import secondcomponent from './component/secondcomponent.vue'
 
 //user
 import Info from './component/user/info.vue'
+//user subs
+import Zxfw from './component/user/zxfw.vue'
+
 
 import Login from './component/account/login.vue'
 import Register from './component/account/register.vue'
@@ -75,14 +78,39 @@ const router = new VueRouter({
       component : Info
     },
     {
+      path:'/user/zxfw',
+      component : Zxfw
+    },
+    {
       path : '*',
       component : NotFound
     }
   ]
 })
 
+router.beforeEach(({meta, path}, from, next) => {
+
+  if(!sessionStorage.userName && path.indexOf('/user')>=0 && path !=='/user'){
+    return next({path:'/login'})
+  }
+  //console.log("userName: "+ sessionStorage.userName);
+  //console.log("path: " + path);
+  //console.log("next: " + next);
+  //console.log("from: " + from.toString());
+  //var { auth = true } = meta
+  //var isLogin = Boolean(store.state.user.id) //true 用户已登录， false 用户未登录
+  //if (auth && !isLogin && path !== '/login') {
+  //  return next({ path: '/login' })
+  //}
+  next()
+})
+
+
 
 const app = new Vue({
       router: router,
       render: h => h(App)
 }).$mount('#app')
+
+
+
