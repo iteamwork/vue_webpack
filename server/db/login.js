@@ -56,8 +56,8 @@ function isExistUser(obj,callback){
 
 
 function updatePwd(obj,callback){
-    var sql ='update users set  password = ? where id = ?';
-    dbConn.conn().query(sql,[getSha(obj.password),obj.id], function (err, result) {
+    var sql ='update users set  password = ? where mobile = ?';
+    dbConn.conn().query(sql,[getSha(obj.password),obj.mobile], function (err, result) {
         if(err){
             console.log('updatePwd is err at ' + err);
         }

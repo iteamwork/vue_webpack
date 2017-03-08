@@ -31,6 +31,25 @@ exports.register = function (req, res) {
     })
 };
 
+exports.updatePwd = function (req, res) {
+    var _user = req.body;
+
+    dal.isExistUser(_user, function (user) {
+        //console.log("user: "+ JSON.stringify(user));
+        if(user){
+            dal.updatePwd(_user, function (result) {
+                console.log("result: "+ JSON.stringify(result));
+                if(result.affectedRows == 1 )
+                    res.json({code:200,msg:'修改成功'});
+                else
+                    res.json({code:401,msg:'修改失败'});
+            })
+        }else{
+            res.json({code:300,msg:'改手机号不存在...'});
+        }
+    })
+};
+
 
 exports.getUsers = function (req, res) {
     console.log("str: " +req.query.name);

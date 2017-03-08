@@ -39,7 +39,7 @@ import Cinema from './component/cinema.vue'
 
 import Login from './component/account/login.vue'
 import Register from './component/account/register.vue'
-import NewLogin from './component/newLogin.vue'
+import ForgotPwd from './component/account/forgotPwd.vue'
 
 import NotFound from './component/errors/404'
 
@@ -79,8 +79,8 @@ const router = new VueRouter({
       component: Register
     },
     {
-      path: '/newLogin',
-      component: NewLogin
+      path: '/forgotPwd',
+      component: ForgotPwd
     },
     {
       path: '/cinema',

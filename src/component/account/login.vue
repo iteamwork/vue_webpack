@@ -40,7 +40,7 @@
       </div>
       <div class="pure-g forgotPwd">
           <div class="pure-u-1 header_reg">
-              <router-link to="/register">忘记密码?</router-link></li>
+              <router-link to="/forgotPwd">忘记密码?</router-link></li>
           </div>
       </div>
   </div>
@@ -98,7 +98,7 @@ export default {
                       else
                         alert('用户名或密码错误...');
                   }, function (response) {
-                      console.log('error:' + response);
+                      console.log('error:' + JSON.stringify(response));
                       // 响应错误回调
                   });
     },
