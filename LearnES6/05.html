@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h3>import export</h3>
+    <p>这两个家伙对应的就是es6自己的module功能。
+        　　我们之前写的JavaScript一直都没有模块化的体系，无法将一个庞大的js工程拆分成一个个功能相对独立但相互依赖的小工程，
+        再用一种简单的方法把这些小工程连接在一起。</p>
+    <p>
+        在es6之前为解决上面提到的问题，我们得利用第三方提供的一些方案，
+        主要有两种CommonJS(服务器端)和AMD(浏览器端，如require.js)。
+    </p>
+
+    <p>
+        而现在我们有了es6的module功能，它实现非常简单，可以成为服务器和浏览器通用的模块解决方案。
+    </p>
+    <p>
+        ES6模块的设计思想，是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。
+        CommonJS和AMD模块，都只能在运行时确定这些东西。
+    </p>
+
+
+<script type="text/javascript">
+    /**
+     * 传统的写法
+     * 首先我们回顾下require.js的写法。假设我们有两个js文件: index.js和content.js,
+     * 现在我们想要在index.js中使用content.js返回的结果，我们要怎么做呢?
+     * 1.requirejs
+     * 2.commonJS
+     * 3.ES6
+     */
+
+
+    //1.require
+
+    //content.js
+    define('content.js', function () {
+        return {cat:'cat'}
+    });
+    //index.js
+    require('./content.js', function (animal) {
+        console.log(animal); //{cat:'cat'}
+    })
+
+
+    //2.common.js
+    //index.js
+    var animal = require('./content.js');
+    //content.js
+    module.exports={cat:'cat'};
+
+    //3.es6
+    //index.js
+    import animal from './content';
+    //content.js
+    export default {cat:'cat'}
+
+
+    //ES6 module的其他高级用法,输出\输入多个变量
+    //这里输入的时候要注意：大括号里面的变量名，必须与被导入模块(content.js)对外接口的名称相同。
+    //contnet.js
+    export default 'A cat';
+    export function say(){
+        return 'hello';
+    }
+    export const type='dog';
+
+    //index.js
+    import {say,type} from './content.js'
+    let say = say();
+    console.log(`The ${type} says ${says}`)  //The dog says Hello
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
