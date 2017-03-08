@@ -14,6 +14,7 @@ import '../node_modules/purecss/build/pure-min.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css'
 import './assets/css/common.css';
 import './assets/css/main.css';
+import './assets/css/swiper.min.css'
 
 
 //引入定义组件, 也可以从别的文件引入
@@ -32,6 +33,9 @@ import Wdsc from './component/user/wdsc.vue'
 import Xtxx from './component/user/xtxx.vue'
 import Sybz from './component/user/sybz.vue'
 import Kfdh from './component/user/kfdh.vue'
+
+//电影详情
+import MovieDetail from './component/movieDetail.vue'
 
 
 import Cinema from './component/cinema.vue'
@@ -85,6 +89,11 @@ const router = new VueRouter({
     {
       path: '/cinema',
       component: Cinema
+    },
+    {
+      path : '/movie/detail/:id',
+      name: 'detail',
+      component : MovieDetail
     },
     {
       path:'/user',

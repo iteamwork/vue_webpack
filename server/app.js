@@ -23,7 +23,12 @@ app.post('/Register',user.register);//注册
 
 app.get('/getUsers',user.getUsers); //获取列表
 
-app.post('/UpdatePwd',user.updatePwd);
+app.get('/getBanner',user.getBanner); //获取banner
+
+app.post('/UpdatePwd',user.updatePwd); //更新密码
+
+app.get('/getMoviesByCity',user.getMoviesByCity); //获取电影列表
+
 
 
 
