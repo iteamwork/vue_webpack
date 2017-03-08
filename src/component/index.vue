@@ -26,8 +26,8 @@ export default {
 
     },
     created (){
-        var obj = '';
-        this.$http.get('http://127.0.0.1:9999/getUsers/?name=',
+        var obj = 'zhang';
+        this.$http.get('http://127.0.0.1:9999/getUsers/?name='+obj,
             {emulateJSON: true})
             .then(function (response) {
                 // 响应成功回调

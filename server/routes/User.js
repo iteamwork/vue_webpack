@@ -1,7 +1,7 @@
 var dal = require('../db/login');
 
 exports.login = function (req, res) {
-    console.log(JSON.stringify(req.body));
+    //console.log(JSON.stringify(req.body));
     dal.login(req.body, function (result) {
         if(result.length === 1){
             res.json({code:200,msg:'登录成功',user:result[0]});
@@ -38,7 +38,6 @@ exports.updatePwd = function (req, res) {
         //console.log("user: "+ JSON.stringify(user));
         if(user){
             dal.updatePwd(_user, function (result) {
-                console.log("result: "+ JSON.stringify(result));
                 if(result.affectedRows == 1 )
                     res.json({code:200,msg:'修改成功'});
                 else
@@ -52,8 +51,9 @@ exports.updatePwd = function (req, res) {
 
 
 exports.getUsers = function (req, res) {
-    console.log("str: " +req.query.name);
-    dal.getAllUsers(function (results) {
+    var _selStr = req.query.name;
+    console.log("str: " +_selStr);
+    dal.getAllUsers(_selStr,function (results) {
         res.json({code:200,msg:'获取列表成功',data:results});
     })
 };
