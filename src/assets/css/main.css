@@ -133,3 +133,72 @@
   padding: 1rem;
   border-bottom: 1px solid #f2f2f2;
 }
+/**
+* 电影详情
+*/
+#movie-detail .m_bg {
+  background: url('../imgs/mbg.png') no-repeat center;
+  padding: 0.5rem 0rem;
+  height: 10rem;
+}
+#movie-detail .m_bg img {
+  width: 80%;
+  padding-left: 10%;
+  height: 98%;
+}
+#movie-detail .m_bg dl {
+  color: #fff;
+}
+#movie-detail .m_bg dl dt {
+  font-size: 1.1rem;
+}
+#movie-detail .m_bg dl dd {
+  line-height: 1.5rem;
+}
+#movie-detail .m_bg .full-star {
+  position: relative;
+  margin-top: 0.4rem;
+  width: 4rem;
+  height: 0.8rem;
+  background-size: auto 100%;
+  background-image: url('../../assets/imgs/nostart.svg');
+}
+#movie-detail .m_bg .score-start {
+  width: 100%;
+  height: 100%;
+  background-size: auto 100%;
+  background-image: url('../../assets/imgs/star.svg');
+}
+#movie-detail .m_bg .score {
+  position: absolute;
+  top: -4px;
+  width: 3rem;
+  left: 4.5rem;
+  font-size: 0.8rem;
+}
+#movie-detail .header {
+  padding: 0.5rem;
+  color: #fff;
+  padding-left: 1rem;
+  background: #e32829;
+}
+#movie-detail .detail {
+  padding: 0.8rem;
+  line-height: 1.8rem;
+  text-indent: 1rem;
+}
+#movie-detail .detail .close {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+#movie-detail .detail .m_tag {
+  line-height: 2rem;
+  height: 2rem;
+  border: 1px solid #c1c1c1;
+  margin-top: 1.5rem;
+  text-align: center;
+}

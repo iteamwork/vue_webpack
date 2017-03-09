@@ -61,7 +61,7 @@ export default {
                 .then(function (response) {
                     // 响应成功回调
                     if(response.body.code == 200){
-                        console.log('right:' + JSON.stringify(response.body));
+                        //console.log('right:' + JSON.stringify(response.body));
                         this.hotLists = response.body.data.returnValue;
                     }
                     else
