@@ -31,9 +31,31 @@
                 <div v-else >收起</div>
             </div>
         </div>
+
+        <div class="pure-g pic">
+            <div class="pure-u-1">
+                <div class="yy">主要演员</div>
+            </div>
+            <div class="pure-u-1">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper" v-if="infoObj.artistes">
+                        <div class="swiper-slide" v-for="item in infoObj.artistes.actor">
+                            <div class="am-img pr">
+                                <img :src="`https://gw.alicdn.com/${item.avatar}`" alt="">
+                                <div class="am-title pa">
+                                    <p class="name">{{ item.artisteName }}</p>
+                                    <p class="pos">{{ item.profession }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
+import Swiper from '../assets/js/swiper.min.js'
 export default {
     data () {
         return {
@@ -67,6 +89,7 @@ export default {
                                     this.infoObj = response.body.data.returnValue;
                                     //this.detailStr = this.detailObj.detailStr;
                                 }
+                                this.initSwiper();
                             }, function (response) {
                                 console.log('error:' + response);
                                 // 响应错误回调
@@ -76,13 +99,26 @@ export default {
                 console.log('error:' + response);
                 // 响应错误回调
             });
+
+
     },
     methods:{
         goBack () {
-            this.$router.back()
+            window.history.go(-1);
+//            this.$router.back()
         },
         controlShowMany:function(){
             this.isShow =!this.isShow;
+        },
+        initSwiper () {
+            this.$nextTick(() => {
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    slidesPerView: 'auto',
+                    centeredSlides: false,
+                    spaceBetween: 5
+                })
+            })
         }
     }
 
