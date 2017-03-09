@@ -70,7 +70,7 @@ export default {
                 // 响应成功回调
                 if(response.body.code == 200){
                     //console.log('right:' + JSON.stringify(response.body));
-                    this.citys = response.body.data;
+                    //this.citys = response.body.data;
                 }
                 else
                     alert('用户名或密码错误...');
