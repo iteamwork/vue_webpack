@@ -25,10 +25,12 @@
         </div>
 
         <div class="pure-g detail">
-            <div class="pure-u-1 close">{{ infoObj.description }}</div>
-            <div @click="tag" class="pure-u-1 m_tag">展开</div>
+            <div class="pure-u-1" :class="{'close':isShow}">{{ infoObj.description }}</div>
+            <div class="pure-u-1 m_tag"  @click="controlShowMany">
+                <div v-if="isShow" >展开</div>
+                <div v-else >收起</div>
+            </div>
         </div>
-
     </div>
 </template>
 <script>
@@ -37,7 +39,8 @@ export default {
         return {
             detailObj: {},
             infoObj:{},
-            detailStr:''
+            detailStr:'',
+            isShow:true
         }
     },
     computed:{
@@ -77,6 +80,9 @@ export default {
     methods:{
         goBack () {
             this.$router.back()
+        },
+        controlShowMany:function(){
+            this.isShow =!this.isShow;
         }
     }
 
