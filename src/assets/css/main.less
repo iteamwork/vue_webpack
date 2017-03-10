@@ -10,6 +10,41 @@
   .header{
       background: @base-white-color;
       padding: 0.75rem 0;
+  }
+
+
+  #playVideo .mask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    top: 0;
+    z-index: 999999;
+
+    .pa{
+      position: relative;
+      width: 19rem;
+      margin: 0 auto;
+      margin-top: 40%;
+      background: #333333;
+
+      .v-icon{
+        position: absolute;
+        top: 0;
+        padding-top: 7rem;
+        left: 42%;
+
+        img{
+          height: 3rem;
+          width: 3rem;
+        }
+      }
+
+      .v-content{
+        width: 100%;
+        height: 17rem;
+      }
+    }
 
   }
 

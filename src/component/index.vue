@@ -17,22 +17,22 @@
             </div>
         </div>
 
-        <div class="pure-g">
-            <hot :hotLists="hotLists"></hot>
-        </div>
 
-        <div class="content">
-            <div class="pure-g">
-                <ul class="pure-u-1">
-                    <li v-for="city in citys" >{{city.username}}</li>
-                </ul>
-            </div>
-        </div>
+        <hot :hotLists="hotLists"></hot>
+
+
+        <!--<div class="pure-g">-->
+            <!--<playVideo></playVideo>-->
+        <!--</div>-->
+
+
+
     </div>
 </template>
 <script>
 import Swiper from '../assets/js/swiper.min.js'
 import hot from './index/hot'
+import playVideo from './index/playVideo.vue'
 export default {
     name: 'swiper',
     data:function(){
@@ -43,7 +43,8 @@ export default {
         }
     },
     components: {
-        hot:hot
+        hot:hot,
+        playVideo:playVideo
     },
     computed:{
 

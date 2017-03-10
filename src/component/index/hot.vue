@@ -1,52 +1,75 @@
 <template>
-    <ul id="hot" class="pure-u-1">
-        <li class="pure-g b_bottom" v-for="item in hotLists">
-            <div class="pure-u-1-4 m_center" >
-                <img  :src="item.poster | addPrefix">
-            </div>
-            <div class="pure-u-7-12">
-                <router-link :to="{ path:'/movie/detail/'+ item.id }">
-                    <span>{{ item.showName }}</span>
-                    <span class="vm type-3dimax" v-if="item.showMark == 'IMAX3D'">
-                        {{item.showMark}}
-                    </span>
-                    <span class="vm type-imax" v-if="item.showMark == 'IMAX'">
-                        {{item.showMark}}
-                    </span>
-                    <span class="vm type-3d" v-if="item.showMark == '3D'">
-                        {{item.showMark}}
-                    </span>
-
-                    <div class="full-star pr">
-                        <div class="score-start" :style="{width: `${item.remark * 10}%`}"></div>
-                        <div class="score pa">{{ item.remark }}</div>
+    <div class="pure-g">
+        <ul id="hot" class="pure-u-1">
+            <li class="pure-g b_bottom" v-for="item in hotLists">
+                <div class="pure-u-1-4 m_center" :style="{'position':'relative'}">
+                    <img  :src="item.poster | addPrefix">
+                    <div @click="playMovieVideo(item.preview[0].iphoneUrl
+    , `https://gw.alicdn.com/${item.poster}`)" class="m_pos">
+                        <img src="https://gw.alicdn.com/tps/TB1PH2uLXXXXXaLaXXXXXXXXXXX-60-60.png" alt="">
                     </div>
-                    <p>导演:{{item.director}}</p>
-                    <p>{{ item.highlight }}</p>
-                    <p>{{ item.leadingRole}}</p>
+                </div>
+                <div class="pure-u-7-12">
+                    <router-link :to="{ path:'/movie/detail/'+ item.id }">
+                        <span>{{ item.showName }}</span>
+                        <span class="vm type-3dimax" v-if="item.showMark == 'IMAX3D'">
+                            {{item.showMark}}
+                        </span>
+                        <span class="vm type-imax" v-if="item.showMark == 'IMAX'">
+                            {{item.showMark}}
+                        </span>
+                        <span class="vm type-3d" v-if="item.showMark == '3D'">
+                            {{item.showMark}}
+                        </span>
 
-                </router-link>
-            </div>
-            <div class="pure-u-1-6 m_center">
-                <input v-if="item.openTime < '2016-12-09'" type="button" value="购买" class="btn btn_buy">
-                <input v-else type="button" value="预售" class="btn forward_buy">
-            </div>
-            <div class="pure-u-1 m_center m_act">
-                <div class="m_title m_left" :style="{color:'#fea54c'}">1212五折狂</div>
-                <div class="m_title">1212特惠抢票</div>
-            </div>
-            <!--<router-link :to="{ name: 'detail', params: { id: item.mID }}">-->
-                <!--<div>{{ item.showName }}</div>-->
-            <!--</router-link>-->
+                        <div class="full-star pr">
+                            <div class="score-start" :style="{width: `${item.remark * 10}%`}"></div>
+                            <div class="score pa">{{ item.remark }}</div>
+                        </div>
+                        <p>导演:{{item.director}}</p>
+                        <p>{{ item.highlight }}</p>
+                        <p>{{ item.leadingRole}}</p>
 
-        </li>
-    </ul>
+                    </router-link>
+                </div>
+                <div class="pure-u-1-6 m_center">
+                    <input v-if="item.openTime < '2016-12-09'" type="button" value="购买" class="btn btn_buy">
+                    <input v-else type="button" value="预售" class="btn forward_buy">
+                </div>
+                <div class="pure-u-1 m_center m_act">
+                    <div class="m_title m_left" :style="{color:'#fea54c'}">1212五折狂</div>
+                    <div class="m_title">1212特惠抢票</div>
+                </div>
+                <!--<router-link :to="{ name: 'detail', params: { id: item.mID }}">-->
+                    <!--<div>{{ item.showName }}</div>-->
+                <!--</router-link>-->
+
+            </li>
+
+        </ul>
+
+        <div id="playVideo" class="pure-u-1">
+            <div class="mask video-mask" @click="cancelMask" v-show="showMask">
+                <div class="video-box pa">
+                    <div class="v-cover">
+                        <video :src="videoUrl" class="v-content" :poster="poster"></video>
+                    </div>
+                    <div class="v-icon" @click="videoStar" v-if="showMask">
+                        <img src="https://gw.alicdn.com/tps/TB1PH2uLXXXXXaLaXXXXXXXXXXX-60-60.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
 export default {
     data:function(){
         return{
-            hotLists:[]
+            hotLists:[],
+            showMask:false,
+            videoUrl:'',
+            poster:''
         }
     },
     filters:{
@@ -71,6 +94,19 @@ export default {
                     // 响应错误回调
                 });
 
+    },
+    methods:{
+        playMovieVideo:function(url,poster){
+            this.videoUrl = url;
+            this.poster =  poster;
+            this.showMask = true
+        },
+        cancelMask(){
+            this.showMask = true
+        },
+        videoStar(){
+
+        }
     }
 }
 </script>
@@ -90,6 +126,21 @@ export default {
         border-bottom: 1px solid #d9d9d9;
         padding: 1rem 0rem 0rem 0rem;
     }
+
+    #hot .b_bottom .m_pos{
+        position: absolute;
+        left: 7.5%;
+        width: 85%;
+        bottom: 0;
+        top: 0;
+    }
+    #hot .b_bottom .m_pos img{
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 0.75rem;
+        padding-top: 2.75rem;
+    }
+
 
     #hot .b_bottom img{
         width: 85%;
