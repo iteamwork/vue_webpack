@@ -25,7 +25,7 @@
             <hot :hotLists="hotLists"></hot>
         </div>
         <div :style="{'width':'100%'}" v-show="!selNav">
-            here is my test
+            <coming :comingLists="comingLists"></coming>
         </div>
 
     </div>
@@ -33,12 +33,13 @@
 <script>
 import Swiper from '../assets/js/swiper.min.js'
 import hot from './index/hot'
+import coming from './index/coming'
 import playVideo from './index/playVideo.vue'
 export default {
     name: 'swiper',
     data:function(){
         return{
-            citys:[],
+            comingLists:[],
             imgs:[],
             hotLists:[],
             selNav:true
@@ -46,7 +47,8 @@ export default {
     },
     components: {
         hot:hot,
-        playVideo:playVideo
+        playVideo:playVideo,
+        coming:coming
     },
     computed:{
 
@@ -78,16 +80,14 @@ export default {
     created (){
         //获取用户列表
         var obj = 'zhang';
-        this.$http.get('http://127.0.0.1:9999/getUsers/?name='+obj,
+        this.$http.get('http://127.0.0.1:9999/getComingMovies/',
             {emulateJSON: true})
             .then(function (response) {
                 // 响应成功回调
                 if(response.body.code == 200){
-                    //console.log('right:' + JSON.stringify(response.body));
-                    //this.citys = response.body.data;
+                    //console.log('right:' + JSON.stringify(response.body.data));
+                    this.comingLists = response.body.data.returnValue;
                 }
-                else
-                    alert('用户名或密码错误...');
             }, function (response) {
                 console.log('error:' + response);
                 // 响应错误回调

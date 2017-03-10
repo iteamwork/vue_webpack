@@ -14,7 +14,7 @@
             <div class="pure-u-3-5">
                 <dl>
                     <dt>{{detailObj.showName}}</dt>
-                    <dd class="m_ellipsis">{{ detailObj.showNameEn }}</dd>
+                    <dd class="m_ellipsis">导演:{{ detailObj.director }}</dd>
                     <dd>{{ detailObj.type }}</dd>
                     <dd>{{ detailObj.country }}｜{{ detailObj.duration }}分钟</dd>
                     <dd>{{ detailObj.openTime }}在中国上映</dd>

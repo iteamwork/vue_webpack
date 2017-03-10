@@ -189,7 +189,7 @@
   font-size: 1.1rem;
 }
 #movie-detail .m_bg dl dd {
-  line-height: 1.5rem;
+  line-height: 1.9rem;
 }
 #movie-detail .m_bg .full-star {
   position: relative;
@@ -207,7 +207,7 @@
 }
 #movie-detail .m_bg .score {
   position: absolute;
-  top: -4px;
+  top: -8px;
   width: 3rem;
   left: 4.5rem;
   font-size: 0.8rem;
