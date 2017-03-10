@@ -16,17 +16,7 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-
-
         <hot :hotLists="hotLists"></hot>
-
-
-        <!--<div class="pure-g">-->
-            <!--<playVideo></playVideo>-->
-        <!--</div>-->
-
-
-
     </div>
 </template>
 <script>
