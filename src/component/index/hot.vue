@@ -51,10 +51,10 @@
         <div id="playVideo" class="pure-u-1">
             <div class="mask video-mask" @click="cancelMask" v-show="showMask">
                 <div class="video-box pa">
-                    <div class="v-cover">
-                        <video :src="videoUrl" class="v-content" :poster="poster"></video>
+                    <div class="v-cover" @click="videoStop">
+                        <video :src="videoUrl" ref="video" class="v-content" :poster="poster"></video>
                     </div>
-                    <div class="v-icon" @click="videoStar" v-if="showMask">
+                    <div class="v-icon" @click="videoStart" v-if="showIcon">
                         <img src="https://gw.alicdn.com/tps/TB1PH2uLXXXXXaLaXXXXXXXXXXX-60-60.png" alt="">
                     </div>
                 </div>
@@ -69,7 +69,8 @@ export default {
             hotLists:[],
             showMask:false,
             videoUrl:'',
-            poster:''
+            poster:'',
+            showIcon:true
         }
     },
     filters:{
@@ -101,11 +102,30 @@ export default {
             this.poster =  poster;
             this.showMask = true
         },
-        cancelMask(){
-            this.showMask = true
-        },
-        videoStar(){
+        cancelMask(event){
+            console.log(event.target.className);
+            if(event.target.className =="mask video-mask"){
+                this.videoStop()
+                this.showMask = false
+                //this.pauseVideo()
+            }
 
+        },
+        videoStart(){
+            this.showIcon = false
+            let video = this.$refs.video
+            video.play()
+        },
+        videoStop(){
+            this.showIcon = true
+            let video = this.$refs.video
+            video.pause()
+        }
+    },
+    mounted () {
+        let video = this.$refs.video
+        video.onended = () => {
+            this.showIcon = true
         }
     }
 }
