@@ -63,7 +63,7 @@
                 <div class="yy">剧照</div>
             </div>
             <div class="pure-u-1">
-                <div class="swiper-container">
+                <div class="swiper-container crew-swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" v-for="item in infoObj.trailer">
                             <div class="am-img pr">
@@ -76,11 +76,8 @@
         </div>
 
         <!--评论-->
-        <div class="pure-g">
-            <div class="pure-u-1">
-                <hotEvaluation :lists="evalLists"></hotEvaluation>
-            </div>
-        </div>
+        <hotEvaluation :lists="evalLists"></hotEvaluation>
+
     </div>
 </template>
 <script>

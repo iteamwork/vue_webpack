@@ -253,3 +253,35 @@
 #movie-detail .picPhoto .am-img img {
   height: 9rem;
 }
+#movie-detail #hotEvaluation {
+  padding: 0.8rem;
+}
+#movie-detail #hotEvaluation .m_comment {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+#movie-detail #hotEvaluation .m_records {
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+#movie-detail #hotEvaluation .m_records .small_pic {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+  padding-left: 0.25rem;
+}
+#movie-detail #hotEvaluation .m_records .m_title {
+  line-height: 2rem;
+}
+#movie-detail #hotEvaluation .m_records .m_title .m_name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+#movie-detail #hotEvaluation .m_records .m_title .m_time {
+  color: #666;
+}
+#movie-detail #hotEvaluation .m_records:last-child {
+  border-bottom: none;
+}
