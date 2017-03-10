@@ -33,7 +33,7 @@
                     </router-link>
                 </div>
                 <div class="pure-u-1-6 m_center">
-                    <input v-if="item.openTime < '2016-12-09'" type="button" value="购买" class="btn btn_buy">
+                    <input v-if="item.openTime < '2017-03-09'" type="button" value="购买" class="btn btn_buy">
                     <input v-else type="button" value="预售" class="btn forward_buy">
                 </div>
                 <div class="pure-u-1 m_center m_act">

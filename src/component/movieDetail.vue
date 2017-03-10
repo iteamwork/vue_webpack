@@ -133,7 +133,7 @@ export default {
                             .then(function (response) {
                                 // 响应成功回调
                                 if(response.body.code == 200){
-                                    console.log('right:' + JSON.stringify(response.body.data.returnValue));
+                                    //console.log('right:' + JSON.stringify(response.body.data.returnValue));
                                     this.evalLists = response.body.data.returnValue;
                                 }
                                 this.initSwiper();

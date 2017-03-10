@@ -2,21 +2,32 @@
     <div id="index">
         <div class="header pure-g m_center">
             <div class="pure-u-1-3">城市</div>
-            <div class="pure-u-1-3">正在热映</div>
-            <div class="pure-u-1-3">即将上映</div>
-        </div>
-
-        <div class="pure-g">
-            <div class="swiper-container pure-u-1" id="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="item in imgs">
-                        <img class="img" :src="'https://gw.alicdn.com/tfs/' + item.smallPicUrl" />
-                    </div>
+            <div class="pure-u-2-3">
+                <div class="pure-g tab" @click="chooseNav">
+                    <div hot='sel' class="pure-u-1-2" :class="{'active':selNav}">正在热映</div>
+                    <div class="pure-u-1-2" :class="{'active':!selNav}">即将上映</div>
                 </div>
-                <div class="swiper-pagination"></div>
             </div>
         </div>
-        <hot :hotLists="hotLists"></hot>
+
+
+        <div :style="{'width':'100%'}" v-show="selNav">
+            <div class="pure-g">
+                <div class="swiper-container pure-u-1" id="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" v-for="item in imgs">
+                            <img class="img" :src="'https://gw.alicdn.com/tfs/' + item.smallPicUrl" />
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <hot :hotLists="hotLists"></hot>
+        </div>
+        <div :style="{'width':'100%'}" v-show="!selNav">
+            here is my test
+        </div>
+
     </div>
 </template>
 <script>
@@ -29,7 +40,8 @@ export default {
         return{
             citys:[],
             imgs:[],
-            hotLists:[]
+            hotLists:[],
+            selNav:true
         }
     },
     components: {
@@ -38,6 +50,17 @@ export default {
     },
     computed:{
 
+    },
+    methods:{
+        chooseNav (event){
+            event.target.getAttribute('hot')? (this.selNav = true) : (this.selNav = false);
+        },
+        selectHotTab(){
+            this.selNav = true;
+        },
+        slectComingTab(){
+            this.selNav = false;
+        }
     },
     watch: {
         imgs() {

@@ -35,8 +35,7 @@ app.get('/getMoviesByDetailStr/:detailStr',user.getMoviesByDetailStr); //获取�
 
 app.get('/getMoviesByEvaluation/:detailStr',user.getMoviesByEvaluation); //获取电影的评论
 
-
-
+app.get('/getComingMovies',user.getComingMovies); //获取即将上映的电影
 
 
 var server = app.listen(9999, function (err) {

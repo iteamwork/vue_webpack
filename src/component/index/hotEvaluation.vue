@@ -37,7 +37,7 @@ export default{
     },
     filters:{
         convertTime:function(val){
-            console.log(val);
+            //console.log(val);
             var   date = new Date(parseInt(val));
             let   Y = date.getFullYear() + '-';
             let   M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';

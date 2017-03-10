@@ -3,7 +3,11 @@
 */
 #index .header {
   background: #fff;
-  padding: 0.75rem 0;
+  line-height: 2.5rem;
+}
+#index .header .tab .active {
+  border-bottom: 3px solid #e32829;
+  color: #e32829;
 }
 #index #playVideo .mask {
   position: fixed;
