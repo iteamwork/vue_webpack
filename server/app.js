@@ -29,9 +29,12 @@ app.post('/UpdatePwd',user.updatePwd); //更新密码
 
 app.get('/getMoviesByCity',user.getMoviesByCity); //获取电影列表
 
-app.get('/getMoviesById/:id',user.getMoviesById);
+app.get('/getMoviesById/:id',user.getMoviesById); //获取电影详情
 
-app.get('/getMoviesByDetailStr/:detailStr',user.getMoviesByDetailStr);
+app.get('/getMoviesByDetailStr/:detailStr',user.getMoviesByDetailStr); //获取电影的信息
+
+app.get('/getMoviesByEvaluation/:detailStr',user.getMoviesByEvaluation); //获取电影的评论
+
 
 
 
