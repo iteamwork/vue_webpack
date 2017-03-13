@@ -15,7 +15,7 @@
                 </div>
                 <div >
                     <ul v-if="userName" class="share">
-                        <li>修改资料</li>
+                        <li> <a href="/user/modifyInfo">修改资料</a></li>
                         <li ><a href="/forgotPwd">修改密码</a></li>
                         <li @click="logOut">退出登录</li>
                     </ul>

@@ -33,6 +33,7 @@ import Wdsc from './component/user/wdsc.vue'
 import Xtxx from './component/user/xtxx.vue'
 import Sybz from './component/user/sybz.vue'
 import Kfdh from './component/user/kfdh.vue'
+import ModifyInfo from './component/account/modifyInfo.vue'
 
 //电影详情
 import MovieDetail from './component/movieDetail.vue'
@@ -118,6 +119,10 @@ const router = new VueRouter({
     {
       path:'/user/xtxx',
       component : Xtxx
+    },
+    {
+      path:'/user/ModifyInfo',
+      component : ModifyInfo
     },
     {
       path:'/user/sybz',

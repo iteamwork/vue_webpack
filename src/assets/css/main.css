@@ -318,3 +318,63 @@
 #movie-detail #hotEvaluation .m_records:last-child {
   border-bottom: none;
 }
+/**
+*修改个人资料
+*/
+#modifyInfo .header {
+  height: 3rem;
+  line-height: 3rem;
+  background: #e32829;
+  color: #fff;
+}
+#modifyInfo .header i {
+  line-height: 2.8rem;
+}
+#modifyInfo .header .m_size {
+  font-size: 1rem;
+}
+#modifyInfo .m_pad {
+  padding: 1rem 1rem 0rem;
+  background: #fff;
+}
+#modifyInfo .m_pad div {
+  line-height: 2.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+#modifyInfo .m_pad .pure-u-1-3 {
+  text-align: left;
+}
+#modifyInfo .m_pad .pure-u-2-3 input[type='text'] {
+  height: 1.5rem;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+#modifyInfo .m_pad .m_border {
+  border-bottom: none;
+}
+#modifyInfo .m_pad .m_border div {
+  border-bottom: none;
+}
+#modifyInfo .m_pad .m_border input[type='radio'] {
+  margin: 0.3px 0.3rem;
+}
+#modifyInfo .m_action {
+  padding: 1rem;
+}
+#modifyInfo .m_action .btn_cancel {
+  color: #e32829;
+  background: #f1f1f1;
+}
+#modifyInfo .m_action .btn_save {
+  color: #fff;
+  background: #e32829;
+}
+#modifyInfo .m_action input[type='button'] {
+  height: 2.2rem;
+  border-radius: 0.3rem;
+  outline: none;
+  box-shadow: none;
+  width: 80%;
+  border: 1px solid #e32829;
+}
