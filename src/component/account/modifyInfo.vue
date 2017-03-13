@@ -32,6 +32,10 @@
                 <input id="imgFile"  type="file"
                        @change="onFileChange">
             </div>
+            <div class="pure-u-1 m_center">
+                <img v-show="isHasImg"  :src="faceImg">
+            </div>
+
         </div>
         <div class="pure-g m_action m_center">
             <div class="pure-u-1-2">
@@ -51,7 +55,8 @@
              mobile:sessionStorage.getItem('mobile'),
              sex:sessionStorage.getItem('sex'),
              id:sessionStorage.getItem('id'),
-             faceImg:''
+             faceImg:'',
+             isHasImg:false
          }
      },
      methods:{
@@ -66,9 +71,9 @@
                  username: this.username,
                  mobile:this.mobile,
                  sex:this.sex,
-                 id:this.id
+                 id:this.id,
                  faceImg:this.faceImg
-                     };
+                 };
 
 
              this.$http.post('http://127.0.0.1:9999/updateUserInfo',obj,
@@ -111,7 +116,8 @@
                  reader = new window.FileReader()
                  reader.readAsDataURL(file[i])
                  reader.onload = function (e) {
-                     vm.faceImg = (e.target.result)
+                     vm.faceImg = (e.target.result);
+                     vm.isHasImg = true;
                      console.log(vm.faceImg);
                  }
              }

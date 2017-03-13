@@ -356,6 +356,11 @@
 #modifyInfo .m_pad .m_border input[type='radio'] {
   margin: 0.3px 0.3rem;
 }
+#modifyInfo .m_pad img {
+  width: 10rem;
+  height: 10rem;
+  padding: 1rem 1rem 0rem;
+}
 #modifyInfo .m_action {
   padding: 1rem;
 }
