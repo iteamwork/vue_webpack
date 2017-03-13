@@ -28,7 +28,9 @@
             </div>
             <div class="pure-u-1-5">头像:</div>
             <div class="pure-u-4-5">
-                <input type="file" @change="onFileChange">
+                <!--<a @click="addPic" style="color: blueviolet;">点击上传头像</a>-->
+                <input id="imgFile"  type="file"
+                       @change="onFileChange">
             </div>
         </div>
         <div class="pure-g m_action m_center">
@@ -49,10 +51,12 @@
              mobile:sessionStorage.getItem('mobile'),
              sex:sessionStorage.getItem('sex'),
              id:sessionStorage.getItem('id'),
-
+             faceImg:''
          }
      },
      methods:{
+         //https://segmentfault.com/a/1190000006860258
+
          goBack(){
              window.history.go(-1);//返回+刷新
              //window.history.back()//返回
@@ -63,6 +67,7 @@
                  mobile:this.mobile,
                  sex:this.sex,
                  id:this.id
+                 faceImg:this.faceImg
                      };
 
 
@@ -87,6 +92,11 @@
                          // 响应错误回调
                      });
          },
+         addPic(e){
+             e.preventDefault();
+             $('input[type=file]').trigger('click');
+             return false;
+         },
          onFileChange(e){
              var file = e.target.files || e.dataTransfer.files;
              if(!file.length) return;
@@ -101,9 +111,11 @@
                  reader = new window.FileReader()
                  reader.readAsDataURL(file[i])
                  reader.onload = function (e) {
-                     vm.images.push(e.target.result)
+                     vm.faceImg = (e.target.result)
+                     console.log(vm.faceImg);
                  }
              }
+
          }
      }
  }
