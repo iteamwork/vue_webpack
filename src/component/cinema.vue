@@ -9,7 +9,6 @@
         name: 'app',
         data () {
         return {
-
         }
     }
     }
