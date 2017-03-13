@@ -37,6 +37,9 @@ app.get('/getMoviesByEvaluation/:detailStr',user.getMoviesByEvaluation); //获�
 
 app.get('/getComingMovies',user.getComingMovies); //获取即将上映的电影
 
+app.post('/updateUserInfo',user.updateUserInfo); //更新用户信息
+
+
 
 var server = app.listen(9999, function (err) {
     if(err){

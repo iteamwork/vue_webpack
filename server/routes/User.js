@@ -6602,5 +6602,30 @@ exports.getUsers = function (req, res) {
 };
 
 
+exports.updateUserInfo = function (req, res) {
+    var _user = req.body;
+    //console.log("_user: "+ JSON.stringify(_user));
+
+    dal.isExistMobile(_user,function(count){
+        //console.log("count: " +JSON.stringify(count[0].count));
+        if(count[0].count == 0){
+            dal.updateUserInfo(_user,function(result){
+                if(result.affectedRows == 1 )
+
+                    res.json({code:200,msg:'修改用户信息成功'});
+                else
+                    res.json({code:300,msg:'修改用户信息失败'});
+            })
+        }else{
+            res.json({code:400,msg:'该手机已存在...'});
+        }
+    })
+
+
+
+
+}
+
+
 
 

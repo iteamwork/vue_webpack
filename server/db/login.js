@@ -74,7 +74,31 @@ function getAllUsers(str,cb){
         }
         cb(results);
     })
+};
+
+
+function isExistMobile(obj,cb){
+    var sql = 'SELECT COUNT(*) AS count FROM users WHERE mobile =? AND id != ?';
+    dbConn.conn().query(sql, [obj.mobile,obj.id],function (err, results) {
+        if(err){
+            console.log('isExistMobile is err at ' + err);
+        }
+        cb(results);
+    })
 }
+
+
+function updateUserInfo(obj,cb){
+    var sql = 'update users set mobile =?,sex=?,username=? where id=?';
+    dbConn.conn().query(sql, [obj.mobile,obj.sex,obj.username,obj.id],function (err, results) {
+        if(err){
+            console.log('updateUserInfo is err at ' + err);
+        }
+        cb(results);
+    })
+};
+
+
 
 
 //导出这些方法
@@ -83,5 +107,7 @@ module.exports={
     isExistUser:isExistUser,
     register:register,
     updatePwd:updatePwd,
-    getAllUsers:getAllUsers
+    getAllUsers:getAllUsers,
+    isExistMobile:isExistMobile,
+    updateUserInfo:updateUserInfo
 };

@@ -341,10 +341,7 @@
   line-height: 2.5rem;
   border-bottom: 1px solid #eaeaea;
 }
-#modifyInfo .m_pad .pure-u-1-3 {
-  text-align: left;
-}
-#modifyInfo .m_pad .pure-u-2-3 input[type='text'] {
+#modifyInfo .m_pad .pure-u-4-5 input[type='text'] {
   height: 1.5rem;
   width: 100%;
   height: 100%;

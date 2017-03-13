@@ -92,6 +92,11 @@ export default {
                       // 响应成功回调
                       if(response.body.code == 200){
                           sessionStorage.setItem('userName',response.body.user.username);
+                          sessionStorage.setItem('mobile',response.body.user.mobile);
+                          sessionStorage.setItem('id',response.body.user.id);
+                          sessionStorage.setItem('sex',response.body.user.sex);
+                          sessionStorage.setItem('faceImg',response.body.user.faceImg);
+                          sessionStorage.setItem('role',response.body.user.role);
                           console.log(sessionStorage.getItem('userName'));
                           window.location.href='/user';
                       }
