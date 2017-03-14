@@ -6604,7 +6604,7 @@ exports.getUsers = function (req, res) {
 
 exports.updateUserInfo = function (req, res) {
     var _user = req.body;
-    //console.log("_user: "+ JSON.stringify(_user));
+    console.log("_user: "+ JSON.stringify(_user));
 
     dal.isExistMobile(_user,function(count){
         //console.log("count: " +JSON.stringify(count[0].count));

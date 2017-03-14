@@ -49,6 +49,10 @@
 </template>
 <script>
  export default{
+
+     //1
+
+
      data(){
          return {
              username:sessionStorage.getItem('userName'),
@@ -84,6 +88,7 @@
                              sessionStorage.setItem('userName',this.username);
                              sessionStorage.setItem('mobile',this.mobile);
                              sessionStorage.setItem('sex',this.sex);
+                             sessionStorage.setItem('faceImg',this.faceImg);
                              alert(response.body.msg);
                          }
                          else if(response.body.code == 300){

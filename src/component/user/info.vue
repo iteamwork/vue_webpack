@@ -3,7 +3,9 @@
         <div class="pure-g">
             <div class="pure-u-1 img">
                 <div class="m_p2">
-                    <img class="face_img" src="../../assets/default_img.png" alt="pic">
+
+                    <img v-if="faceImg" class="face_img" alt="faceImg" :src="faceImg">
+                    <img v-else class="face_img" src="../../assets/default_img.png" alt="pic">
                 </div>
                 <div class="m_padtop">
                     <div v-if="userName">
@@ -80,13 +82,16 @@
 export default {
     data () {
         return {
-            userName:sessionStorage.getItem('userName')
+            userName:sessionStorage.getItem('userName'),
+            faceImg:sessionStorage.getItem('faceImg')
         }
     },
     methods:{
         logOut:function(){
             sessionStorage.setItem('userName','');
+            sessionStorage.setItem('faceImg','');
             this.userName = sessionStorage.getItem('userName');
+            this.faceImg = sessionStorage.getItem('faceImg');
         },
         getGrunt:function(val){
 //            if(this.userName == null || this.userName =="")

@@ -89,8 +89,8 @@ function isExistMobile(obj,cb){
 
 
 function updateUserInfo(obj,cb){
-    var sql = 'update users set mobile =?,sex=?,username=? where id=?';
-    dbConn.conn().query(sql, [obj.mobile,obj.sex,obj.username,obj.id],function (err, results) {
+    var sql = 'update users set mobile =?,sex=?,username=?,faceImg=? where id=?';
+    dbConn.conn().query(sql, [obj.mobile,obj.sex,obj.username,obj.faceImg,obj.id],function (err, results) {
         if(err){
             console.log('updateUserInfo is err at ' + err);
         }
