@@ -29,11 +29,11 @@
             <div class="pure-u-1-5">头像:</div>
             <div class="pure-u-4-5">
                 <!--<a @click="addPic" style="color: blueviolet;">点击上传头像</a>-->
-                <input id="imgFile"  type="file"
+                <input v-show="faceImg"  id="imgFile"  type="file"
                        @change="onFileChange">
             </div>
             <div class="pure-u-1 m_center">
-                <img v-show="isHasImg"  :src="faceImg">
+                <img v-show="faceImg"  :src="faceImg">
             </div>
 
         </div>
@@ -59,8 +59,8 @@
              mobile:sessionStorage.getItem('mobile'),
              sex:sessionStorage.getItem('sex'),
              id:sessionStorage.getItem('id'),
-             faceImg:'',
-             isHasImg:false
+             faceImg:sessionStorage.getItem('faceImg')
+
          }
      },
      methods:{
@@ -122,7 +122,7 @@
                  reader.readAsDataURL(file[i])
                  reader.onload = function (e) {
                      vm.faceImg = (e.target.result);
-                     vm.isHasImg = true;
+                     //vm.isHasImg = true;
                      console.log(vm.faceImg);
                  }
              }
