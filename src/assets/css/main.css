@@ -380,3 +380,9 @@
   width: 80%;
   border: 1px solid #e32829;
 }
+/**
+*cinema
+*/
+#cinema ul li {
+  padding: 5rem;
+}
