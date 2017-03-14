@@ -1,6 +1,9 @@
 /**
 * index
 */
+#index {
+  margin-bottom: 3.2rem;
+}
 #index .header {
   background: #fff;
   line-height: 2.5rem;
@@ -8,6 +11,38 @@
 #index .header .tab .active {
   border-bottom: 3px solid #e32829;
   color: #e32829;
+}
+#index .icon .fa-lg {
+  font-size: 1.5rem;
+  vertical-align: -18%;
+  padding-left: 0.3rem;
+}
+#index .icon .skew {
+  -webkit-transition: all 1s ;
+  -moz-transition: all 1s ;
+  -ms-transition: all 1s ;
+  -o-transition: all 1s ;
+  transition: all 1s ;
+}
+#index .mask {
+  position: fixed;
+  top: 2.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+#index .mask ul li {
+  padding: 1rem;
+  border-bottom: 1px solid #fff;
+}
+#index .swiper-pagination-bullet {
+  opacity: 0.8;
+  background: #e5e8e8;
+}
+#index .swiper-pagination-bullet-active {
+  background: #ff5733;
 }
 #index #playVideo .mask {
   position: fixed;

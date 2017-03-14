@@ -1,7 +1,11 @@
 <template>
     <div id="index">
         <div class="header pure-g m_center">
-            <div class="pure-u-1-3">城市</div>
+            <div class="pure-u-1-3">
+                <div @click="chooseCity" class="icon">{{city}}
+                    <i :class="{'fa-angle-down':selCity}" class="fa fa-lg fa-angle-up skew" aria-hidden="true"></i>
+                </div>
+            </div>
             <div class="pure-u-2-3">
                 <div class="pure-g tab" @click="chooseNav">
                     <div hot='sel' class="pure-u-1-2" :class="{'active':selNav}">正在热映</div>
@@ -23,6 +27,22 @@
                 </div>
             </div>
             <hot :hotLists="hotLists"></hot>
+
+            <div v-show="showCityMask" class="pure-g mask">
+                <ul @click="getVal" class="pure-u-1">
+                    <li value="全国">全国</li>
+                    <li value="上海">上海</li>
+                    <li value="北京">北京</li>
+                    <li value="广州">广州</li>
+                    <li value="成都">成都</li>
+                    <li value="武汉">武汉</li>
+                    <li value="合肥">合肥</li>
+                    <li value="南京">南京</li>
+                    <li value="郑州">郑州</li>
+                </ul>
+            </div>
+
+
         </div>
         <div :style="{'width':'100%'}" v-show="!selNav">
             <coming :comingLists="comingLists"></coming>
@@ -42,7 +62,10 @@ export default {
             comingLists:[],
             imgs:[],
             hotLists:[],
-            selNav:true
+            selNav:true,
+            city:'全国',
+            selCity:true,
+            showCityMask:false
         }
     },
     components: {
@@ -57,11 +80,15 @@ export default {
         chooseNav (event){
             event.target.getAttribute('hot')? (this.selNav = true) : (this.selNav = false);
         },
-        selectHotTab(){
-            this.selNav = true;
+        chooseCity(){
+            this.showCityMask = true;
+            this.selCity = false;
         },
-        slectComingTab(){
-            this.selNav = false;
+        getVal(e){
+            this.city = e.target.innerHTML;
+            this.selCity = true;
+            this.showCityMask = false;
+            //console.log(e.target.innerHTML);
         }
     },
     watch: {
@@ -112,20 +139,4 @@ export default {
     }
 }
 </script>
-<style>
-    #index{
-        margin-bottom: 3.2rem;
-    }
 
-
-    #index .swiper-pagination-bullet{
-        opacity: 0.8;
-        background: #e5e8e8;
-    }
-
-    #index .swiper-pagination-bullet-active{
-        background: #ff5733;
-    }
-
-
-</style>
