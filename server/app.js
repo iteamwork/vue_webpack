@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.post('/Login',user.login);//登录
 app.post('/Register',user.register);//注册
 
-app.get('/getUsers',user.getUsers); //获取列表
+app.post('/getUsers',user.getUsers); //获取列表
 
 app.get('/getBanner',user.getBanner); //获取banner
 

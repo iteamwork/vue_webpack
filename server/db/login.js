@@ -66,10 +66,11 @@ function updatePwd(obj,callback){
 };
 
 
-function getAllUsers(cb){
-    var sql = 'select * from users';
+function getAllUsers(obj,cb){
+    obj.pageIndex =(obj.pageIndex-1)*obj.limit;
+    var sql = 'select * from users limit ?,? ';
     //var sql = 'select * from users where username like "%'+str+'%" ';
-    dbConn.conn().query(sql, function (err, results) {
+    dbConn.conn().query(sql,[obj.pageIndex,parseInt(obj.limit)],function (err, results) {
         if(err){
             console.log('getAllUsers is err at ' + err);
         }

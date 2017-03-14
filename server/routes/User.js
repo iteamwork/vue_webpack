@@ -6598,13 +6598,10 @@ exports.getComingMovies= function (req, res) {
 };
 
 exports.getUsers = function (req, res) {
-    //haha
-    //var _selStr = req.query.name;
-    //console.log("str: " +_selStr);
     //dal.getAllUsers(_selStr,function (results) {
     //    res.json({code:200,msg:'获取列表成功',data:results});
     //})
-    dal.getAllUsers(function (results) {
+    dal.getAllUsers(req.body,function (results) {
         res.json({code:200,msg:'获取列表成功',data:results});
     })
 };

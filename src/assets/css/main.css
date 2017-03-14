@@ -383,6 +383,18 @@
 /**
 *cinema
 */
+#cinema {
+  margin-bottom: 3.3rem;
+}
 #cinema ul li {
-  padding: 5rem;
+  padding: 4rem;
+  border-bottom: 1px solid #c1c1c1;
+  font-size: 2rem;
+}
+#cinema .m_data {
+  text-align: center;
+  line-height: 2rem;
+  height: 2rem;
+  color: #fff;
+  background: #e32829;
 }
