@@ -29,7 +29,7 @@
             <div class="pure-u-1-5">头像:</div>
             <div class="pure-u-4-5">
                 <!--<a @click="addPic" style="color: blueviolet;">点击上传头像</a>-->
-                <input v-show="faceImg"  id="imgFile"  type="file"
+                <input   id="imgFile"  type="file"
                        @change="onFileChange">
             </div>
             <div class="pure-u-1 m_center">
@@ -59,7 +59,7 @@
              mobile:sessionStorage.getItem('mobile'),
              sex:sessionStorage.getItem('sex'),
              id:sessionStorage.getItem('id'),
-             faceImg:sessionStorage.getItem('faceImg')
+             faceImg:''
 
          }
      },
@@ -127,6 +127,11 @@
                  }
              }
 
+         }
+     },
+     created(){
+         if(sessionStorage.getItem('faceImg') != ""){
+             this.faceImg = sessionStorage.getItem('faceImg');
          }
      }
  }

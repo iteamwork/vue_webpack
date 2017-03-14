@@ -82,8 +82,8 @@
 export default {
     data () {
         return {
-            userName:sessionStorage.getItem('userName'),
-            faceImg:sessionStorage.getItem('faceImg')
+            userName:'',
+            faceImg:''
         }
     },
     methods:{
@@ -98,6 +98,21 @@ export default {
 //                window.location.href='/login';
 //            else
                 window.location.href=val;
+        }
+    },
+    created(){
+        this.userName = sessionStorage.getItem('userName');
+//    console.log( sessionStorage.getItem('faceImg'))
+//        if(!sessionStorage.getItem('faceImg')){
+//            console.log("1")
+//        }else{
+//            console.log("2")
+//        }
+
+
+    //193857 22906  181211
+        if(sessionStorage.getItem('faceImg') != ""){
+            this.faceImg = sessionStorage.getItem('faceImg');
         }
     }
 }

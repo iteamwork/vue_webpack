@@ -3,6 +3,10 @@ var dal = require('../db/login');
 exports.login = function (req, res) {
     //console.log(JSON.stringify(req.body));
     dal.login(req.body, function (result) {
+        if(!result[0].faceImg){
+            result[0].faceImg = "";
+        }
+        //console.log(JSON.stringify(result[0]));
         if(result.length === 1){
             res.json({code:200,msg:'登录成功',user:result[0]});
         }else{
@@ -6604,7 +6608,7 @@ exports.getUsers = function (req, res) {
 
 exports.updateUserInfo = function (req, res) {
     var _user = req.body;
-    console.log("_user: "+ JSON.stringify(_user));
+    //console.log("_user: "+ JSON.stringify(_user));
 
     dal.isExistMobile(_user,function(count){
         //console.log("count: " +JSON.stringify(count[0].count));
