@@ -14,7 +14,6 @@
             </div>
         </div>
 
-
         <div :style="{'width':'100%'}" v-show="selNav">
             <div class="pure-g">
                 <div class="swiper-container pure-u-1" id="swiper">
@@ -47,6 +46,13 @@
             <coming :comingLists="comingLists"></coming>
         </div>
 
+        <div class="loadingMask" v-show="showLoading">
+            <div class="pure-g">
+                <div class="pure-u-1 load">
+                    <i class='fa fa-spinner fa-pulse fa-5x fa-fw'></i><span :style="{'font-size':'1rem'}">loading...</span>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -64,7 +70,8 @@ export default {
             selNav:true,
             city:'上海',
             selCity:true,
-            showCityMask:false
+            showCityMask:false,
+            showLoading:true
         }
     },
     components: {
@@ -72,8 +79,14 @@ export default {
         playVideo:playVideo,
         coming:coming
     },
-    computed:{
+    computed(){
 
+    },
+    mounted(){
+        $('.load').css({
+            top:($(window).height() - $('.load').height()) / 2,
+            left:($(window).width() - $('.load').width()) / 2
+        })
     },
     methods:{
         chooseNav (event){
@@ -114,6 +127,7 @@ export default {
                     //console.log('right:' + JSON.stringify(response.body.data));
                     this.comingLists = response.body.data.returnValue;
                 }
+                this.showLoading = false;
             }, function (response) {
                 console.log('error:' + response);
                 // 响应错误回调
