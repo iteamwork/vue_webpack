@@ -1,5 +1,6 @@
 <template>
     <div class="pure-g">
+        <input type="hidden" v-model="city" >
         <ul id="hot" class="pure-u-1">
             <li class="pure-g b_bottom" v-for="item in hotLists">
                 <div class="pure-u-1-4 m_center" :style="{'position':'relative'}">
@@ -70,33 +71,42 @@ export default {
             showMask:false,
             videoUrl:'',
             poster:'',
-            showIcon:true
+            showIcon:true,
+            ctiy:''
         }
     },
+    props: ["city"],
     filters:{
         addPrefix:function(val){
           return  "https://gw.alicdn.com/" + val;
       }
     },
+    watch:{
+        city(val) {
+            this.getMovies();
+        }
+    },
     created (){
-        //获取电影列表
-        this.$http.get('http://127.0.0.1:9999/getMoviesByCity',
-                {emulateJSON: true})
-                .then(function (response) {
-                    // 响应成功回调
-                    if(response.body.code == 200){
-                        console.log('right:' + JSON.stringify(response.body.data));
-                        this.hotLists = response.body.data.returnValue;
-                    }
-                    else
-                        alert('用户名或密码错误...');
-                }, function (response) {
-                    console.log('error:' + response);
-                    // 响应错误回调
-                });
-
+        this.getMovies();
     },
     methods:{
+        getMovies:function(){
+            //获取电影列表
+            this.$http.get('http://127.0.0.1:9999/getMoviesByCity?city='+this.city,
+                    {emulateJSON: true})
+                    .then(function (response) {
+                        // 响应成功回调
+                        if(response.body.code == 200){
+                            //console.log('right:' + JSON.stringify(response.body.data));
+                            this.hotLists = response.body.data.returnValue;
+                        }
+                        else
+                            alert('获取电影列表失败...');
+                    }, function (response) {
+                        console.log('error:' + response);
+                        // 响应错误回调
+                    });
+        },
         playMovieVideo:function(url,poster){
             this.videoUrl = url;
             this.poster =  poster;

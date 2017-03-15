@@ -26,11 +26,10 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-            <hot :hotLists="hotLists"></hot>
+            <hot :hotLists="hotLists" :city="city"></hot>
 
             <div v-show="showCityMask" class="pure-g mask">
                 <ul @click="getVal" class="pure-u-1">
-                    <li value="全国">全国</li>
                     <li value="上海">上海</li>
                     <li value="北京">北京</li>
                     <li value="广州">广州</li>
@@ -63,7 +62,7 @@ export default {
             imgs:[],
             hotLists:[],
             selNav:true,
-            city:'全国',
+            city:'上海',
             selCity:true,
             showCityMask:false
         }
