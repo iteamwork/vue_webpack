@@ -7,7 +7,7 @@
                     <img  :src="item.poster | addPrefix">
                 </div>
                 <div class="pure-u-7-12">
-                    <router-link :to="{ path:'/movie/detail/'+ item.id }">
+                    <router-link :to="{ path:'/movie/detail', query:{id:item.id,city:'上海'}}">
                         <span>{{ item.showName }}</span>
                         <span class="vm type-3dimax" v-if="item.showMark == 'IMAX3D'">
                             {{item.showMark}}
