@@ -150,7 +150,7 @@ export default {
                                     //console.log('right:' + JSON.stringify(response.body.data.returnValue));
                                     this.evalLists = response.body.data.returnValue;
                                 }
-                                this.initSwiper();
+                                //this.initSwiper();
                             }, function (response) {
                                 console.log('error:' + response);
                                 // 响应错误回调
