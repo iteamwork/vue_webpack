@@ -1,3 +1,4 @@
+var url = require('url');
 var dal = require('../db/login');
 
 exports.login = function (req, res) {
@@ -402,7 +403,8 @@ var datas_sh={
                 "specialSchedules": [],
                 "type": "爱情 奇幻 喜剧",
                 "wantCount": "103092"
-            }, {
+            },
+            {
                 "activities": [{
                     "activityExtTagMap": {
                         "CINEMA": "",
@@ -477,7 +479,8 @@ var datas_sh={
                 "specialSchedules": [],
                 "type": "奇幻 冒险",
                 "wantCount": "101677"
-            }, {
+            },
+            {
                 "activities": [{
                     "activityExtTagMap": {
                         "CINEMA": "",
@@ -552,7 +555,8 @@ var datas_sh={
                 "specialSchedules": [],
                 "type": "武侠 剧情 动作 古装",
                 "wantCount": "82485"
-            }, {
+            },
+            {
                 "activities": [{
                     "activityExtTagMap": {
                         "CINEMA": "",
@@ -626,7 +630,8 @@ var datas_sh={
                 "specialSchedules": [],
                 "type": "动作 喜剧 冒险",
                 "wantCount": "35154"
-            }, {
+            },
+            {
                 "activities": [{
                     "activityExtTagMap": {
                         "CINEMA": "",
@@ -6119,10 +6124,20 @@ exports.getMoviesByCity = function(req,res){
 
 
 exports.getMoviesById = function (req, res) {
-    var _id = req.params.id,obj={},flag;
-    //console.log("req:"+ req.params.id);
+    //let query = url.parse(req.url, true).query,
+    //    _id = query.id,
+    //    _city = query.city,
+    //    datas={};
+    var  _id  =  req.query.id,_city=req.query.city,datas={};
+    if(_city.indexOf("sh")>0){
+        datas = datas_sh;
+    }else if(_city == "bj"){
+        datas = datas_bj;
+    }else{
+        datas = datas_gz;
+    }
     datas.data.returnValue.forEach(function(item,index){
-        if(item.id == _id){
+        if(_id.indexOf(item.id)>0){
             return res.json({code:'200',data:item});
         }
     });

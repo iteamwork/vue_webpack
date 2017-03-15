@@ -100,9 +100,23 @@ export default {
         hotEvaluation:hotEvaluation
     },
     created () {
-        let id = this.$route.params.id;
+        let id = this.$route.query.id,
+            city = this.$route.query.city;
+            switch (city){
+                case '上海' :
+                    city= 'sh';
+                    break;
+                case '北京' :
+                    city= 'bj';
+                    break;
+                case '广州' :
+                    city= 'gz';
+                    break;
+            }
+        //console.log(city);
         //获取电影列表'
-        this.$http.get('http://127.0.0.1:9999/getMoviesById/'+id,
+        this.$http.get('http://127.0.0.1:9999/getMoviesById?id="'+id+'"&city="'+city+'"',
+ //         this.$http.get('http://127.0.0.1:9999/getMoviesById/'+id+'/'+city,
             {emulateJSON: true})
             .then(function (response) {
                 // 响应成功回调

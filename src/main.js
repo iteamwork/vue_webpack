@@ -92,7 +92,7 @@ const router = new VueRouter({
       component: Cinema
     },
     {
-      path : '/movie/detail/:id',
+      path : '/movie/detail',
       name: 'detail',
       component : MovieDetail
     },
