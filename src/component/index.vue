@@ -105,7 +105,7 @@ export default {
         }
     },
     created (){
-        //获取用户列表
+        //获取预售电影
         var obj = 'zhang';
         this.$http.get('http://127.0.0.1:9999/getComingMovies/',
             {emulateJSON: true})
