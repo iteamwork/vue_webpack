@@ -11,44 +11,44 @@
 </head>
 <body>
 
-    <div id="app" class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <ul>
-                    <li v-for="(item,index) in list" :value="item.index">
-                        {{item.name}}
-                        <span :style="{'border':'1px solid #c1c1c1'}" @click="deleteItem(index)">delete</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <input type="text" v-model="inputVal" class="col-md-8 input">
-                <input type="button" class="col-md-4" value="增加" @click="addItem">
-            </div>
+<div id="app" class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <ul>
+                <li v-for="(item,index) in list" :value="item.index">
+                    {{item.name}}
+                    <span :style="{'border':'1px solid #c1c1c1'}" @click="deleteItem(index)">delete</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <input type="text" v-model="inputVal" class="col-md-8 input">
+            <input type="button" class="col-md-4" value="增加" @click="addItem">
         </div>
     </div>
+</div>
 
-    <script type="text/javascript">
-        new Vue({
-            data:{
-                list:[],
-                index:0,
-                inputVal:''
+<script type="text/javascript">
+    new Vue({
+        data:{
+            list:[],
+            index:0,
+            inputVal:''
+        },
+        el:'#app',
+        methods:{
+            addItem: function () {
+                var _val = document.getElementsByClassName('input')[0].value;
+                this.list.push({"index":this.index++,"name":_val});
             },
-            el:'#app',
-            methods:{
-                addItem: function () {
-                    var _val = document.getElementsByClassName('input')[0].value;
-                    this.list.push({"index":this.index++,"name":_val});
-                },
-                deleteItem: function (index) {
-                    this.list.splice(index,1);
+            deleteItem: function (index) {
+                this.list.splice(index,1);
 //                    console.log(index);
-                }
             }
-            
-        })
-    </script>
+        }
+
+    })
+</script>
 
     <!--<script type="text/javascript" >-->
         <!--/*************store************/-->
