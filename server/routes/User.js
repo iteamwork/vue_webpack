@@ -4,15 +4,15 @@ var dal = require('../db/login');
 exports.login = function (req, res) {
     //console.log(JSON.stringify(req.body));
     dal.login(req.body, function (result) {
-        if(!result[0].faceImg){
-            result[0].faceImg = "";
-        }
-        //console.log(JSON.stringify(result[0]));
         if(result.length === 1){
+            if(!result[0].faceImg){
+                result[0].faceImg = "";
+            }
             res.json({code:200,msg:'登录成功',user:result[0]});
         }else{
             res.json({code:300,msg:'登录失败'});
         }
+        //console.log(JSON.stringify(result[0]));
     })
 }
 
