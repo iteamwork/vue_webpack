@@ -86,8 +86,8 @@
 
         methods:{
             addRecord: function () {
-                _storeObj.commit('ADDITEM',{"id":2,"name":this.name});
-                //_storeObj.dispatch('addItem',{"id":2,"name":this.name})
+                //_storeObj.commit('ADDITEM',{"id":2,"name":this.name});
+                _storeObj.dispatch('addItem',{"id":2,"name":this.name})
             }
         }
 

@@ -167,7 +167,7 @@ export default {
     methods:{
         goBack () {
  //           window.history.go(-1);
-            this.$router.back();
+            this.$router.go(-1);
         },
         controlShowMany:function(){
             this.isShow =!this.isShow;

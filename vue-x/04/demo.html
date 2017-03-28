@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="../../node_modules/vue/dist/vue.min.js"></script>
+<script src="../../node_modules/vuex/dist/vuex.js"></script>
+<script>
+
+    const state={
+        count :0
+    }
+
+    const mutations ={
+        INCREMENT: function (state) {
+            console.log("mutations");
+            state.count ++;
+        }
+    }
+
+    const actions ={
+        increment: function (dis) {
+            console.log(dis);
+            dis.commit("INCREMENT")
+        }
+    }
+
+
+    const getters={
+        getValue: function () {
+            return state.count;
+        }
+    }
+
+
+
+    const store = new Vuex.Store({
+        state:state,
+        actions:actions,
+        getters:getters,
+        mutations:mutations
+    })
+
+    store.dispatch('increment');
+    console.log(store.getters["getValue"]);
+
+
+
+</script>
+</body>
+</html>
