@@ -26,6 +26,14 @@
         state:{
             count:0
         },
+        actions:{
+            increment: function (dis) {
+                dis.commit("increment");
+            },
+            decrement: function (dis) {
+                dis.commit("decrement")
+            }
+        },
         mutations:{
             increment: state => state.count++,
             decrement: state => state.count--
@@ -42,10 +50,10 @@
         },
         methods:{
             increment(){
-                store.commit('increment');
+                store.dispatch('increment');
             },
             decrement(){
-                store.commit('decrement')
+                store.dispatch('decrement')
             }
         }
     })
